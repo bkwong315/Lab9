@@ -65,7 +65,7 @@
     class CalculationError extends Error {
       constructor(message) {
         super(message);
-        this.name = "laserError";
+        this.name = "CalculationError";
       }
     }
 
@@ -79,7 +79,7 @@
         output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
       } catch(err) {
         try {
-          throw new CalculationError('There was a error performing this operation.\nPlease, double check your inputs.');
+          throw new CalculationError('CalculationError: There was a error performing this operation.\nPlease, double check your inputs.');
         } catch (custErr) {
           alert(custErr.message);
         }
